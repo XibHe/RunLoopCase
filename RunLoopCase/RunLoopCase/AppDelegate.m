@@ -19,12 +19,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+//    CFRunLoopRef runloop = CFRunLoopGetCurrent();
+//    //获取所有Mode，因为可能有很多Mode，每个Mode都需要跑，此处可以选择提交下崩溃信息之类的
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"程序崩溃了" message:@"崩溃信息" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+//    [alertView show];
+//    NSArray *allModes = CFBridgingRelease(CFRunLoopCopyAllModes(runloop));
+//    while (1) {
+//        //快速切换Mode
+//        for (NSString *mode in allModes) {
+//            CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
+//        }
+//    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
+    
+
     
     return YES;
 }

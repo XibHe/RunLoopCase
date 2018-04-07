@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "LoadImageViewController.h"
+#import "CrashViewController.h"
 
 static NSString *cellIndentify = @"cell";
 
@@ -60,7 +61,8 @@ static NSString *cellIndentify = @"cell";
         LoadImageViewController *loadImageVC = [[LoadImageViewController alloc] init];
         [self.navigationController pushViewController:loadImageVC animated:YES];
     } else if (indexPath.row == 1) {
-        
+        CrashViewController *crashVC = [[CrashViewController alloc] init];
+        [self.navigationController pushViewController:crashVC animated:YES];
     }
 }
 

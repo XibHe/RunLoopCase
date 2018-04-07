@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472C99192078B3B9006BB15C /* CrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472C99182078B3B9006BB15C /* CrashViewController.m */; };
 		47EC083B207884C80041AD61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EC083A207884C80041AD61 /* AppDelegate.m */; };
 		47EC0841207884C80041AD61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EC083F207884C80041AD61 /* Main.storyboard */; };
 		47EC0843207884C80041AD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47EC0842207884C80041AD61 /* Assets.xcassets */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		472C99172078B3B9006BB15C /* CrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashViewController.h; sourceTree = "<group>"; };
+		472C99182078B3B9006BB15C /* CrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashViewController.m; sourceTree = "<group>"; };
 		47EC0836207884C80041AD61 /* RunLoopCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunLoopCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47EC0839207884C80041AD61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47EC083A207884C80041AD61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 			children = (
 				47EC0870207886F40041AD61 /* LoadImageViewController.h */,
 				47EC0871207886F40041AD61 /* LoadImageViewController.m */,
+				472C99172078B3B9006BB15C /* CrashViewController.h */,
+				472C99182078B3B9006BB15C /* CrashViewController.m */,
 			);
 			path = FunctionViewController;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472C99192078B3B9006BB15C /* CrashViewController.m in Sources */,
 				47EC0849207884C80041AD61 /* main.m in Sources */,
 				47EC086E207885D80041AD61 /* MainViewController.m in Sources */,
 				47EC0872207886F40041AD61 /* LoadImageViewController.m in Sources */,
@@ -396,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -445,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -459,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPXMNBN2HM;
 				INFOPLIST_FILE = RunLoopCase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RunLoopCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPXMNBN2HM;
 				INFOPLIST_FILE = RunLoopCase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RunLoopCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
