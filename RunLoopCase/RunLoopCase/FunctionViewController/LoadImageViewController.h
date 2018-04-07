@@ -10,4 +10,9 @@
 
 @interface LoadImageViewController : UIViewController
 
++ (void)label:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
++ (void)addImage1With:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
++ (void)addImage2With:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
++ (void)addImage3With:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
+
 @end

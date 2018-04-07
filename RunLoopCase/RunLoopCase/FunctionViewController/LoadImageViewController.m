@@ -23,7 +23,7 @@ static CGFloat cellHeight = 135.f;
     [super viewDidLoad];
     
     _tasks = [NSMutableArray array];
-    [self loadView];
+    [self loadSubViews];
     [self addRunloopObserver];
     
     // 为了确保循环每次调用(将timer扔到了Runloop中)
@@ -36,7 +36,7 @@ static CGFloat cellHeight = 135.f;
 }
 
 // 加载tableView
-- (void)loadView
+- (void)loadSubViews
 {
     self.view = [UIView new];
     self.exampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
@@ -46,12 +46,31 @@ static CGFloat cellHeight = 135.f;
     [self.view addSubview:self.exampleTableView];
 }
 
++ (void)remove:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+{
+    for (NSInteger i = 1; i <= 5; i++) {
+        [[cell.contentView viewWithTag:i] removeFromSuperview];
+    }
+}
+
+// label
++ (void)label:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 25)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor redColor];
+    label.text = [NSString stringWithFormat:@"%zd - Drawing index is top priority", indexPath.row];
+    label.font = [UIFont boldSystemFontOfSize:13];
+    label.tag = 5;
+    [cell.contentView addSubview:label];
+}
+
 // 加载第一张图片
 + (void)addImage1With:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(105, 20, 85, 85)];
     imageView.tag = 1;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"spaceship" ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"space" ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
@@ -66,7 +85,7 @@ static CGFloat cellHeight = 135.f;
 {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 20, 85, 85)];
     imageView.tag = 2;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"spaceship" ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"space" ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
@@ -90,7 +109,7 @@ static CGFloat cellHeight = 135.f;
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 20, 85, 85)];
     imageView.tag = 3;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"spaceship" ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"space" ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
@@ -104,7 +123,7 @@ static CGFloat cellHeight = 135.f;
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 300;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,15 +131,19 @@ static CGFloat cellHeight = 135.f;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentify];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    // 干掉contentView上的子控件
-    for (NSInteger i = 1; i <= 5; i++) {
-        [[cell.contentView viewWithTag:i] removeFromSuperview];
-    }
+//    // 干掉contentView上的子控件
+//    for (NSInteger i = 1; i <= 5; i++) {
+//        [[cell.contentView viewWithTag:i] removeFromSuperview];
+//    }
     
     // 添加图片
 //    [LoadImageViewController addImage1With:cell indexPath:indexPath];
 //    [LoadImageViewController addImage2With:cell indexPath:indexPath];
 //    [LoadImageViewController addImage3With:cell indexPath:indexPath];
+    
+    [LoadImageViewController remove:cell indexPath:indexPath];
+    [LoadImageViewController label:cell indexPath:indexPath];
+    
     [self addTask:^{
         [LoadImageViewController addImage1With:cell indexPath:indexPath];
     }];
@@ -145,7 +168,7 @@ static CGFloat cellHeight = 135.f;
 #pragma mark - 关于Runlopp的方法
 - (void)addTask:(runloopBlock)task
 {
-    [self.tasks addObject:_tasks];
+    [self.tasks addObject:task];
     if (self.tasks.count > 18) {
         [self.tasks removeObjectAtIndex:0];
     }
@@ -186,7 +209,5 @@ void callback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *i
     taskBlock();
     [vc.tasks removeObjectAtIndex:0];
 }
-
-
 
 @end

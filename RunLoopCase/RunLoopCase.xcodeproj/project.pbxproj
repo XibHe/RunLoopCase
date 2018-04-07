@@ -16,6 +16,7 @@
 		47EC085E207884C90041AD61 /* RunLoopCaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EC085D207884C90041AD61 /* RunLoopCaseUITests.m */; };
 		47EC086E207885D80041AD61 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EC086D207885D80041AD61 /* MainViewController.m */; };
 		47EC0872207886F40041AD61 /* LoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EC0871207886F40041AD61 /* LoadImageViewController.m */; };
+		47EC08742078A7250041AD61 /* space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47EC08732078A7250041AD61 /* space.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		47EC086D207885D80041AD61 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		47EC0870207886F40041AD61 /* LoadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadImageViewController.h; sourceTree = "<group>"; };
 		47EC0871207886F40041AD61 /* LoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadImageViewController.m; sourceTree = "<group>"; };
+		47EC08732078A7250041AD61 /* space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				47EC086B207885CA0041AD61 /* Main */,
 				47EC0839207884C80041AD61 /* AppDelegate.h */,
 				47EC083A207884C80041AD61 /* AppDelegate.m */,
+				47EC08732078A7250041AD61 /* space.jpg */,
 				47EC083F207884C80041AD61 /* Main.storyboard */,
 				47EC0842207884C80041AD61 /* Assets.xcassets */,
 				47EC0844207884C80041AD61 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47EC08742078A7250041AD61 /* space.jpg in Resources */,
 				47EC0846207884C80041AD61 /* LaunchScreen.storyboard in Resources */,
 				47EC0843207884C80041AD61 /* Assets.xcassets in Resources */,
 				47EC0841207884C80041AD61 /* Main.storyboard in Resources */,
